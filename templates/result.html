@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results | CyberShield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <p class="eyebrow">QUIZ COMPLETED</p>
+        <h1>Your <span>Results</span></h1>
+        <p>{{ topic.title }}</p>
+
+        <div class="score-card">
+            <div class="score">{{ score }}/{{ total }}</div>
+            <p>{{ percentage }}% score</p>
+        </div>
+
+        {% if percentage == 100 %}
+            <p>Excellent work!</p>
+        {% elif percentage >= 60 %}
+            <p>Good job! Keep practicing.</p>
+        {% else %}
+            <p>Keep learning and try again.</p>
+        {% endif %}
+    </header>
+
+    <main class="container">
+        <h2>Answer Review</h2>
+
+        {% for item in results %}
+        <section class="question-card">
+            <h3>{{ loop.index }}. {{ item.question }}</h3>
+
+            {% if item.correct %}
+                <p class="correct">Correct!</p>
+            {% else %}
+                <p class="incorrect">Incorrect</p>
+            {% endif %}
+
+            <p>Your answer: <strong>{{ item.selected }}</strong></p>
+            <p>Correct answer: <strong>{{ item.correct_answer }}</strong></p>
+            <p class="muted">{{ item.explanation }}</p>
+        </section>
+        {% endfor %}
+
+        <a class="button" href="{{ url_for('home') }}">Back to Modules</a>
+        <button class="button secondary" onclick="window.print()">
+            Print Results
+        </button>
+    </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ topic.title }} | CyberShield</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="small-hero">
+        <a href="{{ url_for('home') }}">← Home</a>
+        <h1>{{ topic.title }}</h1>
+        <p>Choose one answer for every question.</p>
+    </header>
+
+    <main class="container">
+        <form action="{{ url_for('result', topic_key=topic_key) }}" method="POST">
+            {% for question in topic.questions %}
+            {% set question_index = loop.index0 %}
+
+            <section class="question-card">
+                <p class="question-number">QUESTION {{ loop.index }} OF 5</p>
+                <h3>{{ question.q }}</h3>
+
+                <div class="options">
+                    {% for option in question.options %}
+                    <label class="option">
+                        <input
+                            type="radio"
+                            name="q{{ question_index }}"
+                            value="{{ loop.index0 }}"
+                            required
+                        >
+                        <span>{{ option }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endfor %}
+
+            <button class="button submit-button" type="submit">
+                Submit Quiz
+            </button>
+        </form>
+    </main>
+</body>
+</html>

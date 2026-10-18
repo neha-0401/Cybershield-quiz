@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0b1020;
+    color: #e8eefc;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.hero, .small-hero {
+    text-align: center;
+    padding: 48px 20px;
+    background: linear-gradient(135deg, #111b35, #123d46);
+    border-bottom: 1px solid #263b52;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    margin: 8px 0;
+}
+
+.hero h1 span {
+    color: #42e8b4;
+}
+
+.eyebrow, .module, .question-number {
+    color: #42e8b4;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: 35px auto;
+}
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.topic-card, .question-card, .score-card {
+    background: #121b2e;
+    border: 1px solid #293a54;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+.topic-card h3, .question-card h3 {
+    margin-top: 8px;
+}
+
+.muted {
+    color: #a8b6cc;
+}
+
+.button {
+    display: inline-block;
+    background: #42e8b4;
+    color: #07131b;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 12px;
+}
+
+.button:hover {
+    background: #8af5d4;
+}
+
+.secondary {
+    background: #263b52;
+    color: #ffffff;
+    margin-left: 8px;
+}
+
+.small-hero {
+    padding: 28px 20px;
+}
+
+.small-hero a {
+    color: #42e8b4;
+    text-decoration: none;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin: 9px 0;
+    border: 1px solid #293a54;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.option:hover {
+    border-color: #42e8b4;
+    background: #18263a;
+}
+
+.option input {
+    accent-color: #42e8b4;
+    width: 17px;
+    height: 17px;
+}
+
+.submit-button {
+    margin-bottom: 35px;
+}
+
+.score-card {
+    display: inline-block;
+    min-width: 150px;
+    margin: 20px auto 0;
+}
+
+.score {
+    color: #42e8b4;
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.correct {
+    color: #42e8b4;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: #ff8d9b;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: #a8b6cc;
+}
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .button, .small-hero a {
+        display: none;
+    }
+
+    .question-card, .score-card {
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+}

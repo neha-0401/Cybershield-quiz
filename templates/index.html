@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Quiz Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <p class="eyebrow">CYBERSECURITY LEARNING PLATFORM</p>
+        <h1>CyberShield <span>Quiz Lab</span></h1>
+        <p>Learn. Practice. Protect.</p>
+        <p>Test your knowledge with 5 cybersecurity modules.</p>
+    </header>
+
+    <main class="container">
+        <h2>Choose Your Challenge</h2>
+        <p class="muted">Each module contains 5 multiple-choice questions.</p>
+
+        <section class="topics">
+            {% for key, topic in topics.items() %}
+            <article class="topic-card">
+                <p class="module">MODULE {{ loop.index }}</p>
+                <h3>{{ topic.title }}</h3>
+                <p>5 questions · Beginner to harder</p>
+                <a class="button" href="{{ url_for('quiz', topic_key=key) }}">
+                    Start Quiz →
+                </a>
+            </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>CyberShield Quiz Lab · Educational project</footer>
+</body>
+</html>
