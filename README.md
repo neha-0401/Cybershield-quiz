@@ -18,11 +18,11 @@ A beginner-friendly cybersecurity quiz practice website built using Python, Flas
 
 ## 📚 Quiz Modules
 
-1. **Linux Commands** — `ls -la`, `touch`, `rm -rf`, `ifconfig`, `ip a`
-2. **Basics of Cybersecurity** — Malware, firewall, phishing, MFA, and updates
-3. **Identify the Cyberattack** — Phishing, ransomware, DDoS, SQL injection, and social engineering
-4. **Security Fundamentals** — Confidentiality, integrity, availability, authentication, and authorization
-5. **Cryptography** — Encryption, decryption, symmetric encryption, and asymmetric cryptography
+1. **Linux Commands** 
+2. **Basics of Cybersecurity** 
+3. **Identify the Cyberattack** 
+4. **Security Fundamentals** 
+5. **Cryptography** 
 
 ## 🧰 Technologies Used
 
@@ -62,10 +62,8 @@ cybershield-quiz/
 Open a terminal and run:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/cybershield-quiz.git
+git clone https://github.com/neha-0401/cybershield-quiz.git
 ```
-
-Replace `YOUR-USERNAME` with the GitHub username of the repository owner.
 
 ### Step 2: Enter the project directory
 
